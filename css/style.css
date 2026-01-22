@@ -19,7 +19,7 @@ body {
 
 .header {
     height: 90px;
-    margin: 0px 100px;
+
     border-bottom: 1px solid #e5e5e5;
 }
 
@@ -37,11 +37,19 @@ body {
     
 }
 
+.nav {
+    flex: 1;
+    display: flex;
+    justify-content: center; 
+}
+
 .nav ul {
     display: flex;
     gap: 80px;
     list-style: none;
 }
+
+
 
 .nav a {
     color: #030305;
@@ -104,9 +112,10 @@ body {
     margin: 120px 0 80px;
 }
 
-.cars-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.cars-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 40px;
     margin-bottom: 120px;
 }
@@ -116,14 +125,17 @@ body {
     overflow: hidden;
     text-align: center;
     transition: transform 0.3s;
-    
+    width: 380px; 
+    flex: 0 0 calc(33.333% - 40px); 
+    max-width: 380px;
+    min-width: 300px; 
 }
 
 .car-card:hover {
-    scale: 1.1;
+    transform: scale(1.05); 
     border: 1px solid #ddd;
     border-radius: 10px;
-    outline-color: black;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
 }
 
 .car-card img {
@@ -150,31 +162,26 @@ body {
     font-size: 16px;
 }
 
-.icon_drive {
+.icon_drive, .icon_gear, .icon_group {
     width: 34px;
     height: 34px;
-    background: url('../images/Drive.png') center/cover no-repeat;
-    border-radius: 50%;
     margin: 0 auto 10px;
     position: relative;
+    background-color: transparent; 
+    border: none; 
+    border-radius: 0; 
+}
+
+.icon_drive {
+    background: url('../images/Drive.png') center/contain no-repeat;
 }
 
 .icon_gear {
-    width: 34px;
-    height: 34px;
-    background: url('../images/Gear.png') center/cover no-repeat;
-    border-radius: 50%;
-    margin: 0 auto 10px;
-    position: relative;
+    background: url('../images/Gear.png') center/contain no-repeat;
 }
 
 .icon_group {
-    width: 34px;
-    height: 34px;
-    background: url('../images/Group.png') center/cover no-repeat;
-    border-radius: 50%;
-    margin: 0 auto 10px;
-    position: relative;
+    background: url('../images/Group.png') center/contain no-repeat;
 }
 
 .contact-section {
@@ -190,7 +197,7 @@ body {
 
 .contact-form {
     flex: 1;
-    max-width: 400px;
+    max-width: none;
 }
 
 .contact-form h2 {
@@ -203,6 +210,7 @@ body {
     font-size: 16px;
     color: #5c5c5e;
     margin-bottom: 50px;
+    white-space: nowrap;
 }
 
 .contact-form input {
@@ -240,4 +248,31 @@ body {
 
 .footer p {
     font-size: 15px;
+}
+
+@media (max-width: 1200px) {
+    .car-card {
+        flex: 0 0 calc(50% - 40px); 
+    }
+}
+
+@media (max-width: 768px) {
+    .car-card {
+        flex: 0 0 100%; 
+    }
+    
+    .cars-flex {
+        gap: 20px;
+    }
+    
+    .nav ul {
+        gap: 20px; 
+        flex-wrap: wrap; 
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-form p {
+        white-space: normal; 
+    }
 }
