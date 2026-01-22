@@ -19,7 +19,6 @@ body {
 
 .header {
     height: 90px;
-
     border-bottom: 1px solid #e5e5e5;
 }
 
@@ -27,14 +26,13 @@ body {
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; 
 }
 
 .logo img {
     width: 113px;
-    height: 50px; 
+    height: 50px;
     object-fit: cover;
-    
 }
 
 .nav {
@@ -47,9 +45,9 @@ body {
     display: flex;
     gap: 80px;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
-
-
 
 .nav a {
     color: #030305;
@@ -110,12 +108,13 @@ body {
     font-size: 60px;
     font-weight: 900;
     margin: 120px 0 80px;
+    text-align: center;
 }
 
-.cars-flex {
+.cars-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center; 
     gap: 40px;
     margin-bottom: 120px;
 }
@@ -162,26 +161,31 @@ body {
     font-size: 16px;
 }
 
-.icon_drive, .icon_gear, .icon_group {
+.icon_drive {
     width: 34px;
     height: 34px;
+    background: url('../images/Drive.png') center/cover no-repeat;
+    border-radius: 50%;
     margin: 0 auto 10px;
     position: relative;
-    background-color: transparent; 
-    border: none; 
-    border-radius: 0; 
-}
-
-.icon_drive {
-    background: url('../images/Drive.png') center/contain no-repeat;
 }
 
 .icon_gear {
-    background: url('../images/Gear.png') center/contain no-repeat;
+    width: 34px;
+    height: 34px;
+    background: url('../images/Gear.png') center/cover no-repeat;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    position: relative;
 }
 
 .icon_group {
-    background: url('../images/Group.png') center/contain no-repeat;
+    width: 34px;
+    height: 34px;
+    background: url('../images/Group.png') center/cover no-repeat;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    position: relative;
 }
 
 .contact-section {
@@ -197,21 +201,19 @@ body {
 
 .contact-form {
     flex: 1;
-    max-width: none;
+    max-width: 400px;
 }
 
 .contact-form h2 {
-    font-size: 48px;
+    font-size: 60px;
     font-weight: 900;
     margin-bottom: 30px;
-    line-height: 1.1;
 }
 
 .contact-form p {
     font-size: 16px;
     color: #5c5c5e;
     margin-bottom: 50px;
-    white-space: nowrap;
 }
 
 .contact-form input {
@@ -251,6 +253,7 @@ body {
     font-size: 15px;
 }
 
+
 @media (max-width: 1200px) {
     .car-card {
         flex: 0 0 calc(50% - 40px); 
@@ -262,18 +265,12 @@ body {
         flex: 0 0 100%; 
     }
     
-    .cars-flex {
+    .cars-grid {
         gap: 20px;
     }
     
     .nav ul {
         gap: 20px; 
         flex-wrap: wrap; 
-    }
-}
-
-@media (max-width: 768px) {
-    .contact-form p {
-        white-space: normal; 
     }
 }
